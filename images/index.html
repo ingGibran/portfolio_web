@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alejandro Gibran | CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css?v=2">
+</head>
+<body>
+
+  <script>
+    console.log("Hola")
+  </script>
+
+  <main class="menu">
+    
+    <header class="logo">
+      <h1>Alejandro Gibrán Zavala González</h1>
+      <!-- Frase amarilla -->
+      <p class="splash">Machine Learning &amp; Software Engineer</p>
+    </header>
+
+    <div class="menu-layout">
+      <!-- Botones principales -->
+      <nav class="main-buttons" aria-label="Secciones principales">
+        <button class="mc-btn" data-panel="experience">Experience</button>
+        <button class="mc-btn" data-panel="portfolio">Proyects</button>
+        <button class="mc-btn" data-panel="skills">Skills</button>
+      </nav>
+
+      <!-- Botones secundarios-->
+      <div class="side-buttons">
+        <button class="mc-btn" data-panel="contact">Contact</button>
+        <div class="about-option">
+          <span class="player-name">Gibran</span>
+          <img class="skin" src="../images/skin.png" alt="Personaje estilo Minecraft">
+          <button class="mc-btn" data-panel="about">About Me</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- base de lospaneles de contenido -->
+  <div class="panel-overlay" id="overlay" aria-hidden="true">
+    <section class="panel" role="dialog" aria-modal="true" aria-labelledby="panel-title">
+      <div class="panel-header">
+        <h2 id="panel-title"></h2>
+        <button class="mc-btn panel-close" id="panel-close" aria-label="Cerrar">X</button>
+      </div>
+      <div class="panel-body" id="panel-body"></div>
+    </section>
+  </div>
+
+  <!-- Informacion -->
+  <template id="tpl-experience">
+    <h3>Data Engineering Intern · Inmobiliaria Citelis</h3>
+    <p>October 2025 - Present · Morelia, Michoacán</p><br>
+    <ul>
+      <li>Engineered automated ETL pipelines integrating Microsoft Dynamics 365 with Power BI, establishing auto-updating semantic
+models to streamline and accelerate dashboard generation.</li><br>
+      <li>Authored comprehensive technical documentation and presented the end-to-end data architecture workflow for extracting and
+visualizing Microsoft 365 data.</li>
+    </ul><br>
+
+      <h3>AI Research Assistant · Instituto Tecnológico de Morelia</h3>
+    <p>June 2026 - Present</p>
+    <ul><br>
+      <li>Investigated hyperparameter optimization techniques for question-answering language models, focusing on reducing computational costs and improving accessibility for researchers with limited hardware resources.</li>
+      <br>
+      <li>Evaluated Optuna-based hyperparameter tuning using only 5% of the dataset, identifying configurations that yielded positive results on the full dataset and analyzing performance differences between Optuna and LoRA-based approaches.</li>
+    </ul>
+  </template>
+
+  <template id="tpl-portfolio">
+    <h3>Machine Learning Automation · 2026</h3>
+    <p>Full-stack web application that lets non-technical users train and host machine learning models through a no-code interface. Built with FastAPI, Polars, Scikit-Learn and MinIO.</p>
+    <ul>
+      <li>Designed a modular pipeline with object storage for datasets and artifacts.</li>
+      <li><a href="https://github.com/ingGibran/easyML" target="_blank" rel="noopener noreferrer">View on GitHub</a></li>
+    </ul>
+
+    <h3>Drawn Digits Guesser · 2026</h3>
+    <img class="project-image" src="../images/digits_guesser.png" alt="Interfaz de Drawn Digits Guesser">
+    <p>Browser-based application that classifies hand-drawn digits in real time using a PyTorch CNN exported to ONNX and served through FastAPI.</p>
+    <p><a href="https://github.com/ingGibran/Drawn-Digits-AI-Guesser" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
+
+    <h3>Snake Game Reinforcement Learning Model · 2026</h3>
+    <p>Deep Q-Learning agent that learns to play Snake from raw game state through self-play, with a C++ game environment connected to the Python training loop.</p>
+    <p><a href="https://github.com/ingGibran/Snake-Reinforcement-Learning-Model" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
+  </template>
+
+  <template id="tpl-skills">
+    <h3>Programming</h3>
+    <ul><li>Python, C++, Java, SQL, ASM</li></ul>
+    <h3>Deep Learning &amp; NLP</h3>
+    <ul><li>PyTorch, ONNX, Hugging Face, Transformers, YOLO, OpenCV, Torchvision</li></ul>
+    <h3>ML &amp; Experimentation</h3>
+    <ul><li>Scikit-learn, Optuna, MLflow, Weights &amp; Biases</li></ul>
+    <h3>Data &amp; Backend</h3>
+    <ul><li>Polars, Pandas, NumPy, Matplotlib, Seaborn, Power BI, FastAPI, Django, SQLModel, Alembic, Redis</li></ul>
+    <h3>Databases &amp; DevOps</h3>
+    <ul><li>PostgreSQL, MySQL, SQL Server, MongoDB, MinIO, Docker, GitHub Actions, GitHub/GitLab, Linux</li></ul>
+    <h3>Languages</h3>
+    <ul><li>Spanish (Native), English (Advanced)</li></ul>
+  </template>
+
+  <template id="tpl-contact">
+    <ul>
+      <li>Morelia, Michoacán, Mexico</li>
+      <li>Nationality: Mexican &amp; Spanish</li>
+      <li>Email: <a href="mailto:alegizago@gmail.com">alegizago@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/alejandro-gibr%C3%A1n-zavala-gonz%C3%A1lez-517384358/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="https://github.com/ingGibran" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+  </template>
+
+  <template id="tpl-about">
+    <p>(representative image, not real me)</p>
+    <p>Computer Systems Engineering student specializing in Applied Machine Learning and Software Engineering.</p>
+    <p>Proven ability to research, train and fine-tune state-of-the-art models using PyTorch, and deploy them as production-ready APIs with FastAPI. Skilled in database management and software development within native Linux environments.</p>
+    <br>
+    <p>My goal is to become an AI researcher studying state-of-the-art models and contributing to new innovations in artificial intelligence.</p>
+  </template>
+
+  <script>
+    // Relaciona cada valor de data-panel con el título que se mostrará en el panel.
+    const titles = {
+      experience: 'Experience',
+      portfolio: 'Proyects',
+      skills: 'Skills',
+      contact: 'Contact',
+      about: 'About Me'
+    };
+
+    // Guardan referencias a los elementos HTML que JavaScript actualizará.
+    const overlay = document.getElementById('overlay');
+    const title = document.getElementById('panel-title');
+    const body = document.getElementById('panel-body');
+
+    // Abre el panel correspondiente a la opción seleccionada.
+    function openPanel(key) {
+      title.textContent = titles[key];
+
+      // Busca la plantilla asociada, copia su contenido y lo inserta en el panel :)
+      body.replaceChildren(document.getElementById('tpl-' + key).content.cloneNode(true));
+
+      // Añade la clase CSS que hace visible el panel :]
+      overlay.classList.add('open');
+
+      // Deja de esconder el panel
+      overlay.setAttribute('aria-hidden', 'false');
+    }
+
+    // Cierra el panel que está visible.
+    function closePanel() {
+      // Elimina la clase CSS que muestra el panel
+      overlay.classList.remove('open');
+
+      // Informa a los lectores de pantalla que el panel está oculto
+      overlay.setAttribute('aria-hidden', 'true');
+    }
+
+    // Busca todos los botones que tienen el atributo data-panel.
+    document.querySelectorAll('[data-panel]').forEach(btn =>
+      btn.addEventListener('click', () => openPanel(btn.dataset.panel))
+    );
+
+    document.getElementById('panel-close').addEventListener('click', closePanel);
+    overlay.addEventListener('click', e => { if (e.target === overlay) closePanel(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
+  </script>
+
+</body>
+</html>

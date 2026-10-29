@@ -1,0 +1,171 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+% Font options
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tgtermes}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generated pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Alejandro Gibrán Zavala González} \\ \vspace{2pt}
+    \small Morelia, Michoacán, Mexico$|$ 
+    Nationality: Mexican \& Spanish \\ \vspace{2pt}
+    \href{mailto:alegizago@gmail.com}{\underline{alegizago@gmail.com}} $|$ 
+    \href{https://www.linkedin.com/in/alejandro-gibr\%C3\%A1n-zavala-gonz\%C3\%A1lez-517384358/}{\underline{LinkedIn}} $|$
+    \href{https://github.com/ingGibran}{\underline{GitHub}}
+\end{center}
+
+\section{Professional Summary}
+Computer Systems Engineering student specializing in Applied Machine Learning and Software Engineering. Proven ability to research, train, and fine-tune state-of-the-art models using PyTorch, and deploy them as production-ready APIs with FastAPI. Skilled in database management and software development within native Linux environments.
+
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming Languages}{: Python, C++, Java, SQL, ASM} \\
+     \textbf{Deep Learning \& NLP}{: PyTorch, ONNX, Hugging Face, Transformers, YOLO, OpenCV, Torchvision} \\
+     \textbf{ML \& Experimentation}{: Scikit-learn, Optuna, MLflow, Weights \& Biases} \\
+     \textbf{Data Analysis \& Visualization}{: Polars, Pandas, NumPy, Matplotlib, Seaborn, Power BI} \\
+     \textbf{Backend}{: FastAPI, Django, SQLModel, Alembic, Redis} \\
+     \textbf{Databases}{: PostgreSQL, MySQL, SQL Server, MongoDB, MinIO} \\
+     \textbf{DevOps \& Tools}{: Docker, GitHub Actions, GitHub / GitLab, Linux} \\
+     \textbf{Enterprise Systems}{: Microsoft Dynamics 365, OData} \\
+     \textbf{Spoken Languages}{: Spanish (Native), English (Advanced)}
+    }}
+ \end{itemize}
+
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Instituto Tecnológico de Morelia (TecNM)}{Morelia, Michoacán}
+      {Bachelor of Science in Computer Systems Engineering}{Expected 2028}
+  \resumeSubHeadingListEnd
+
+\section{Experience \& Activities}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Data Engineering Intern}{October 2025 - Present}
+      {Inmobiliaria Citelis}{Morelia, Michoacán}
+      \resumeItemListStart
+        \resumeItem{Engineered automated ETL pipelines integrating Microsoft Dynamics 365 with Power BI, establishing auto-updating semantic models to streamline and accelerate dashboard generation.}
+        \resumeItem{Authored comprehensive technical documentation and presented the end-to-end data architecture workflow for extracting and visualizing Microsoft 365 data.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {NLP Researcher}{June 2026 -- July 2026}
+      {XXXI Verano de la Investigación Científica (Programa Delfín 2026)}{Mexico}
+      \resumeItemListStart
+        \resumeItem{Evaluated hyperparameter optimization techniques (Multi-fidelity, Bayesian, and LoRA) on the RoBERTa model using the SQuAD 2.0 dataset. Proposed a novel tuning methodology that successfully improved the F1 score by ≈10\% and Exact Match (EM) by ≈5\%.}
+      \resumeItemListEnd
+      
+    \resumeSubHeadingListEnd
+    
+\section{Projects}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\textbf{Machine Learning Automation} $|$ \emph{FastAPI, Polars, Scikit-Learn, MinIO} \href{https://github.com/ingGibran/easyML}{\faGithub}}{2026}
+      \resumeItemListStart
+        \resumeItem{Developed and deployed a full-stack web application that lets non-technical users train and host ML models through a no-code interface}
+        \resumeItem{Designed a modular pipeline with object storage (MinIO) for datasets/artifacts and a FastAPI backend to orchestrate training and inference}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Drawn Digits Guesser} $|$ \emph{PyTorch, FastAPI, ONNX} \href{https://github.com/ingGibran/Drawn-Digits-AI-Guesser}{\faGithub}}{2026}
+      \resumeItemListStart
+        \resumeItem{Trained a CNN in PyTorch to classify hand-drawn digits in real time from a browser-based canvas}
+        \resumeItem{Exported the model to ONNX and served it via FastAPI, reducing inference latency for real-time predictions}
+      \resumeItemListEnd
+    
+    \resumeProjectHeading
+      {\textbf{Snake Game Reinforcement Learning Model} $|$ \emph{PyTorch, C++} \href{https://github.com/ingGibran/Snake-Reinforcement-Learning-Model}{\faGithub}}{2026}
+      \resumeItemListStart
+        \resumeItem{Implemented a Deep Q-Learning agent in PyTorch that learns to play Snake from raw game state through self-play}
+        \resumeItem{Built the game environment in C++ for performance, interfacing it with the Python training loop}
+      \resumeItemListEnd
+      
+  \resumeSubHeadingListEnd
+
+\end{document}

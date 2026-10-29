@@ -1,0 +1,304 @@
+:root {
+    --btn-face: #6f6f6f;
+    --btn-light: #a8a8a8;
+    --btn-dark: #3a3a3a;
+    --btn-border: #1e1e1f;
+    --btn-hover: #5b8f3e;
+    --splash: #ffff55;
+    --splash-shadow: #3f3f15;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    color: #fff;
+    background: #000 url("../images/background_minecraft.png") center / cover no-repeat fixed;
+    image-rendering: pixelated;
+    overflow: hidden;
+}
+
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+}
+
+.menu {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6vh 16px 24px;
+}
+
+/* ---------- Nombre ---------- */
+.logo {
+    position: relative;
+    text-align: center;
+    margin-bottom: 14vh;
+    transform: translateY(-8vh);
+}
+
+.logo h1 {
+    font-size: clamp(1.4rem, 5.2vw, 3.6rem);
+    line-height: 1.1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #c6c6c6;
+    text-shadow:
+    -3px -3px 0 #8b8b8b,
+        3px -3px 0 #8b8b8b,
+    -3px  3px 0 #4a4a4a,
+        3px  3px 0 #4a4a4a,
+        0 6px 0 #2b2b2b,
+        0 10px 0 rgba(0, 0, 0, 0.45);
+    -webkit-text-stroke: 2px #1a1a1a;
+    paint-order: stroke fill;
+}
+
+.splash {
+    position: absolute;
+    left: 50%;
+    margin-left: 80px;
+    bottom: -28px;
+    transform: translateX(-50%) rotate(-18deg);
+    transform-origin: center;
+    color: var(--splash);
+    font-size: clamp(0.55rem, 1.6vw, 1rem);
+    white-space: nowrap;
+    text-shadow: 3px 3px 0 var(--splash-shadow);
+    animation: pulse 0.9s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    from { transform: translateX(-50%) rotate(-18deg) scale(0.94); }
+    to   { transform: translateX(-50%) rotate(-18deg) scale(1.06); }
+}
+
+/* ---------- Botones  ---------- */
+.mc-btn {
+    appearance: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: clamp(0.7rem, 1.6vw, 1rem);
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 3px 3px 0 #333;
+    background: var(--btn-face);
+    border: 4px solid var(--btn-border);
+    box-shadow:
+    inset 4px 4px 0 var(--btn-light),
+    inset -4px -4px 0 var(--btn-dark);
+    padding: 18px 20px;
+    width: 100%;
+    transition: none;
+}
+
+.mc-btn:hover,
+.mc-btn:focus-visible {
+    outline: none;
+    background: var(--btn-hover);
+    border-color: #fff;
+    box-shadow:
+    inset 4px 4px 0 #8fc46d,
+    inset -4px -4px 0 #35591f;
+    text-shadow: 3px 3px 0 #1f3a10;
+}
+
+.mc-btn:active {
+    box-shadow:
+    inset 4px 4px 0 var(--btn-dark),
+    inset -4px -4px 0 var(--btn-light);
+}
+
+.menu-layout {
+    width: min(1050px, 96vw);
+    display: grid;
+    grid-template-columns: minmax(170px, 240px) minmax(0, 560px) minmax(170px, 240px);
+    align-items: end;
+    gap: 24px;
+}
+
+.main-buttons {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    max-width: 620px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.main-buttons .mc-btn {
+    padding: 21px 24px;
+}
+
+.main-buttons .mc-btn:first-child {
+    padding: 24px 20px;
+}
+
+.side-buttons {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    pointer-events: none;
+}
+
+.side-buttons .mc-btn {
+    pointer-events: auto;
+    width: min(240px, 42vw);
+    padding: 14px 10px;
+    font-size: clamp(0.55rem, 1.3vw, 0.8rem);
+}
+
+.about-option {
+    width: min(240px, 42vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.player-name {
+    color: #fff;
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-shadow:
+        3px 3px 0 #3f3f3f,
+        5px 5px 0 rgba(0, 0, 0, 0.65);
+}
+
+.about-option .skin {
+    display: block;
+    width: min(200px, 34vw);
+    height: 250px;
+    object-fit: contain;
+    image-rendering: pixelated;
+    filter: drop-shadow(7px 7px 0 rgba(0, 0, 0, 0.65));
+}
+
+.about-option .mc-btn {
+    width: 100%;
+}
+
+@media (max-width: 760px) {
+    .menu-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .main-buttons {
+        order: 1;
+        width: min(560px, 90vw);
+    }
+
+    .side-buttons {
+        order: 2;
+        width: min(560px, 90vw);
+    }
+
+    .about-option {
+        width: min(240px, 42vw);
+    }
+}
+
+/* ---------- Los paneles ---------- */
+.panel-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 16px;
+}
+
+.panel-overlay.open { display: flex; }
+
+.panel {
+    width: min(900px, 100%);
+    max-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    background: #3c3c3c;
+    border: 4px solid #000;
+    box-shadow:
+    inset 4px 4px 0 #8b8b8b,
+    inset -4px -4px 0 #1f1f1f;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: #2b2b2b;
+    border-bottom: 4px solid #000;
+}
+
+.panel-header h2 {
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0 #000;
+}
+
+.panel-close {
+    width: auto;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+}
+
+.panel-body {
+    padding: 20px;
+    overflow-y: auto;
+    font-size: clamp(0.55rem, 1.2vw, 0.75rem);
+    line-height: 2;
+}
+
+.panel-body h3 {
+    color: var(--splash);
+    margin: 12px 0 6px;
+    text-shadow: 2px 2px 0 var(--splash-shadow);
+    font-size: 1em;
+}
+
+.panel-body ul { padding-left: 20px; }
+.panel-body a { color: #7ee1ff; }
+
+.project-image {
+    display: block;
+    width: min(100%, 560px);
+    height: auto;
+    margin: 12px auto 16px;
+    border: 4px solid #000;
+    image-rendering: auto;
+}
+
+@media (max-width: 520px) {
+    .menu { padding-top: 4vh; }
+    .logo {
+        margin-bottom: 10vh;
+        transform: translateY(-5vh);
+    }
+    .splash {
+        left: 50%;
+        margin-left: 55px;
+        bottom: -23px;
+    }
+}
